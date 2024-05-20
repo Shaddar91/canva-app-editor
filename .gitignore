@@ -61,7 +61,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
+.env
 # Misc
 .DS_Store
 Thumbs.db

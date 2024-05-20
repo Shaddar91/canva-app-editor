@@ -7,7 +7,7 @@ echo "Docker Compose file has been created."
 read -p "Do you want to run docker-compose up and fetch secrets from Vault? (yes/no): " response
 
 if [[ "$response" == "yes" ]]; then
-    vault kv get -format=json editor_service/secrets | jq -r 'if .data.data then .data.data else .data end | to_entries | .[] | "\(.key)=\(.value)"' >> .env
+    vault kv get -format=json editor__canva_service/secrets | jq -r 'if .data.data then .data.data else .data end | to_entries | .[] | "\(.key)=\(.value)"' >> .env
     echo "Secrets added to .env file."
     docker-compose up
 else
